@@ -7,7 +7,7 @@ namespace ak {
         public StartListen(): void {
             const evts = this.RegEvents();
             evts.forEach($evt => {
-                const inc = new AkEventVo(AkEventMgr.EventName($evt), this);
+                const inc = new AkEventVo(AkEventMgr.EventNameClass($evt), this);
                 AkEventMgr.RegEvent(inc);
             });
         }
@@ -16,16 +16,16 @@ namespace ak {
         /**
          * 回调派生类事件函数
          */
-        public ReceiveEvents($evt: {new():AkEvent}, ...plist: any[]): void {
-            this.ExecuteHook($evt, plist);
+        public ReceiveEvents(evt: AkEvent, ...plist: any[]): void {
+            this.ExecuteHook(evt, plist);
         }
       
 
         /**
          * 反射调用方法
          */
-        protected ExecuteHook($evt: {new():AkEvent}, ...args: any[]): boolean {
-            const method = `on${$evt.name}`;
+        protected ExecuteHook(evt: AkEvent, ...args: any[]): boolean {
+            const method = `on${evt.constructor.name}`;
             const info = this.constructor as any;
 
             const methodinfo = info.prototype[method];

@@ -31,14 +31,14 @@ namespace ak {
          * 发送事件
          * @param evt 
          */
-        public static S(evt: {new():AkEvent}): void {
-            const key: string = AkEventMgr.EventName(evt);
+        public static S(evt: AkEvent): void {
+            const key: string = AkEventMgr.EventNameObj(evt);
   
             if (!this._eventKVlist.hasOwnProperty(key)) {
                 AkLog.warn(`没有注册事件： ${key}`);
                 return;
             }
-            
+
             const events = this._eventKVlist[key];
             if (events != null) {
                 events.forEach(ev => {
@@ -53,10 +53,13 @@ namespace ak {
          * @param t 
          * @returns 
          */
-        public static EventName(t: { new(): AkEvent }): string {
+        public static EventNameClass(t: { new(): AkEvent }): string {
             return `ak_${t.name}`;
         }
 
+        public static EventNameObj(t: AkEvent): string {
+            return `ak_${t.constructor.name}`;
+        }
 
     }
 }
