@@ -118,6 +118,9 @@
     "scripts/akframe/akmcore/AkModuleMgr.ts",
 
     "scripts/akframe/akutils/AkLog.ts",
+    "scripts/akframe/akutils/AkDate.ts",
+     
+    "scripts/main.ts",
 
     "scripts/test/TestModule.ts",
     "scripts/test/TestProxy1.ts",
