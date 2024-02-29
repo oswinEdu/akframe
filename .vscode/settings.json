@@ -1,0 +1,38 @@
+{
+    "editor.fontSize": 12,
+    //左边文件栏隐藏那些文件夹
+    "files.exclude": {
+        "**/.git": true,
+        // 忽略文件夹 
+        "**/node_modules": true,
+        "**/library": true,
+        "**/profiles": true,
+        "**/temp": true,
+        "**/Logs": true,
+        "**/Packages": true,
+        "**/__plugins": true,
+        "**/ProjectSettings": true,
+        "**/UserSettings": true,
+        "**/DllLibs": true,
+        "**/dist": true,
+        "**/Editor Default Resources": true,
+        "**/settings": true,
+        "**/Assets/Book-Page Curl Pro": true,
+        "**/.DS_Store": true,
+        "**/*.md": true,
+        "**/*.anim": true,
+        //  忽略所有xxx.meta文件
+        "**/*.meta": true
+    },
+
+    //搜索时候忽略那些文件夹或文件
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "build/": true,
+        "temp/": true,
+        "library/": true,
+        "**/*.anim": true
+    }
+
+}
