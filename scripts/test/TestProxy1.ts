@@ -4,7 +4,7 @@ class TestProxy1 extends ak.AkProxy {
         return [TestEvent]
     }
 
-    private onTestEvent(): void {
-        ak.AkLog.print('调用 1 onTestEvent')
+    private onTestEvent(tobj: TestEvent): void {
+        ak.AkLog.print('调用 1 onTestEvent', tobj.testNum)
     }
 }

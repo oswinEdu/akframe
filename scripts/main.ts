@@ -4,7 +4,9 @@ namespace ak {
             AkModuleMgr.StartModule(TestModule);
 
             setTimeout(() => {
-                AkEventMgr.S(TestEvent);
+                let tobj = new TestEvent()
+                tobj.testNum = -99;
+                AkEventMgr.S(tobj);
             }, 1000);
         }
 

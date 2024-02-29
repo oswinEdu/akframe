@@ -19,12 +19,6 @@ namespace ak {
 
             let start: string = "";
             let end: string = "";
-            // TypeScript doesn't support conditional compilation like C# does with #if
-            // You would need to handle this logic at runtime or with a build tool
-            // if (/* condition to check if it's UNITY_EDITOR */) {
-            //     start = "<color=green>";
-            //     end = "</color>";
-            // }
             console.log(`${start}${this.LOG_TAG}${log}${end}`);
         }
 
@@ -35,12 +29,6 @@ namespace ak {
 
             let start: string = "";
             let end: string = "";
-            // TypeScript doesn't support conditional compilation like C# does with #if
-            // You would need to handle this logic at runtime or with a build tool
-            // if (/* condition to check if it's UNITY_EDITOR */) {
-            //     start = "<color=yellow>";
-            //     end = "</color>";
-            // }
             console.warn(`${start}${this.LOG_TAG}${log}${end}`);
         }
 
@@ -57,8 +45,7 @@ namespace ak {
         public static exception(...list: any[]): void {
             let log: string = this.__log(...list);
             if (log.length == 0) return;
-
-            throw new Error(`异常 ${log}`);
+            throw new Error(`异常-${log}`);
         }
     }
 }

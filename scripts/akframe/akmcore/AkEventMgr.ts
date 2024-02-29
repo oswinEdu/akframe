@@ -32,8 +32,11 @@ namespace ak {
          * @param evt 
          */
         public static S(evt: AkEvent): void {
+            if(typeof evt == 'function') {
+                AkLog.exception('please new AkEvent ')
+            }
+
             const key: string = AkEventMgr.EventNameObj(evt);
-  
             if (!this._eventKVlist.hasOwnProperty(key)) {
                 AkLog.warn(`没有注册事件： ${key}`);
                 return;
@@ -58,8 +61,11 @@ namespace ak {
         }
 
         public static EventNameObj(t: AkEvent): string {
-            return `ak_${t.constructor.name}`;
+            return `ak_${this.EventName(t)}`;
         }
 
+        public static EventName(t: AkEvent): string {
+            return `${t.constructor.name}`;
+        }
     }
 }

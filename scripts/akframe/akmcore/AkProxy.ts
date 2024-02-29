@@ -25,12 +25,12 @@ namespace ak {
          * 反射调用方法
          */
         protected ExecuteHook(evt: AkEvent, ...args: any[]): boolean {
-            const method = `on${evt.constructor.name}`;
+            const method = `on${AkEventMgr.EventName(evt)}`;
             const info = this.constructor as any;
 
             const methodinfo = info.prototype[method];
             if (methodinfo) {
-                methodinfo.apply(this, args);
+                methodinfo.call(this, evt);
                 return true;
             }
             
