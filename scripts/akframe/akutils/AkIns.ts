@@ -4,4 +4,5 @@ class AkIns {
     public static get Inst(): AkIns {
         return AkIns._instance;
     }
+    
 }

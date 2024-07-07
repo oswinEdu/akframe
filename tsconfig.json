@@ -119,8 +119,8 @@
 
     "scripts/akframe/akutils/AkLog.ts",
     "scripts/akframe/akutils/AkDate.ts",
-     
-    "scripts/main.ts",
+
+    "scripts/akframe/akmain.ts",
 
     "scripts/test/TestModule.ts",
     "scripts/test/TestProxy1.ts",
@@ -129,9 +129,10 @@
     "scripts/main.ts",
   ],
   "include": [
-    "**/*.d.ts"
+    "**/*.d.ts",
   ],
   "exclude":[
-    "dist/"
+    "dist/",
+    "node_modules",
   ]
 }

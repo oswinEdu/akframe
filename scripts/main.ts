@@ -15,6 +15,6 @@ namespace ak {
     }
 }
  
-var sam = new ak.MyClass();
-sam.printTS();
+// var sam = new ak.MyClass();
+// sam.printTS();
 

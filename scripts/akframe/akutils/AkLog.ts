@@ -1,6 +1,6 @@
 namespace ak {
     export class AkLog {
-        private static readonly LOG_TAG: string = "unity-日志:";
+        private static readonly LOG_TAG: string = "cocos-日志:";
 
         private static __log(...list: any[]): string {
             if (list == null) return "";
