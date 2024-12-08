@@ -15,6 +15,7 @@ namespace ak {
         
 
         // 派生类实现
+        // 
         protected RegProxy(): Array<{new():AkProxy}> 
         {
             ak.AkLog.error("派生类实现 RegProxy");
