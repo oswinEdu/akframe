@@ -1,64 +1,69 @@
 {
   "compilerOptions": {
-    "target": "es2016",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-    // "lib": [],                                        /* Specify a set of bundled library declaration files that describe the target runtime environment. */
+    "target": "es5",// es5 es2016 cocos creator不能使用
+    
+    "lib": [
+      "es5",
+      "dom",
+      "es6",
+      "es2015.promise"
+    ],
  
-    /* Modules */
-    "module": "amd",                                /* Specify what module code is generated. amd commonjs */
-    // "rootDir": "./",                                  /* Specify the root folder within your source files. */
-    // "moduleResolution": "node10",                     /* Specify how TypeScript looks up a file from a given module specifier. */
-    // "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
+    "module": "amd",//amd commonjs
+    // "rootDir": "./",
+    // "moduleResolution": "node10",
+    // "baseUrl": "./",
 
-    /* Emit */
-    "declaration": true,                              /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
-    // "declarationMap": true,                           /* Create sourcemaps for d.ts files. */
-    // "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */
-    // "inlineSourceMap": true,                          /* Include sourcemap files inside the emitted JavaScript. */
-    "outFile": "./dist/akframe.js",                                  /* Specify a file that bundles all outputs into one JavaScript file. If 'declaration' is true, also designates a file that bundles all .d.ts output. */
-    // "outDir": "./dist/",                                   /* Specify an output folder for all emitted files. */
-    // "removeComments": true,                           /* Disable emitting comments. */
+    "declaration": true,
+    // "declarationMap": true,
+    // "sourceMap": true,
+    // "inlineSourceMap": true,
+    // "outFile": "./dist/akframe.js",
+    "outFile": "../frame2/assets/libs/akframe.js",
+    // "outDir": "./dist/",
+    // "removeComments": true, // 是否移除注释
 
-    /* Interop Constraints */
-    // "isolatedModules": true,                          /* Ensure that each file can be safely transpiled without relying on other imports. */
-    // "verbatimModuleSyntax": true,                     /* Do not transform or elide any imports or exports not marked as type-only, ensuring they are written in the output file's format based on the 'module' setting. */
-    // "allowSyntheticDefaultImports": true,             /* Allow 'import x from y' when a module doesn't have a default export. */
-    "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
-    // "preserveSymlinks": true,                         /* Disable resolving symlinks to their realpath. This correlates to the same flag in node. */
-    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
+    // "isolatedModules": true,
+    // "verbatimModuleSyntax": true,
+    // "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    // "preserveSymlinks": true,
+    "forceConsistentCasingInFileNames": true,
 
-    "strict": true,                                      /* Enable all strict type-checking options. */
+    "strict": true,
 
-    /* Completeness */
-    // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
-    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
+    // "skipDefaultLibCheck": true,
+    "skipLibCheck": true
   },
+
   "files":[
-    "scripts/akframe/akmcore/imcore/IModule.ts",
-    "scripts/akframe/akmcore/imcore/IProxy.ts",
+    // "scripts/akframe/akmcore/imcore/IModule.ts",
+    // "scripts/akframe/akmcore/imcore/IProxy.ts",
 
-    "scripts/akframe/akmcore/AkEvent.ts",
-    "scripts/akframe/akmcore/AkEventVo.ts",
-    "scripts/akframe/akmcore/AkEventMgr.ts",
-    "scripts/akframe/akmcore/AkProxy.ts",
-    "scripts/akframe/akmcore/AkModule.ts",
-    "scripts/akframe/akmcore/AkModuleMgr.ts",
+    // "scripts/akframe/akmcore/AkEvent.ts",
+    // "scripts/akframe/akmcore/AkEventVo.ts",
+    // "scripts/akframe/akmcore/AkEventMgr.ts",
+    // "scripts/akframe/akmcore/AkProxy.ts",
+    // "scripts/akframe/akmcore/AkModule.ts",
+    // "scripts/akframe/akmcore/AkModuleMgr.ts",
 
-    "scripts/akframe/akutils/AkLog.ts",
-    "scripts/akframe/akutils/AkDate.ts",
+    // "scripts/akframe/akutils/AkLog.ts",
+    // "scripts/akframe/akutils/AkDate.ts",
 
-    "scripts/akframe/akmain.ts",
+    // "scripts/akframe/akmain.ts",
 
-    "scripts/test/TestModule.ts",
-    "scripts/test/TestProxy1.ts",
-    "scripts/test/TestProxy2.ts",
-    "scripts/test/TestEvent.ts",
+    // "scripts/test/TestModule.ts",
+    // "scripts/test/TestProxy1.ts",
+    // "scripts/test/TestProxy2.ts",
+    // "scripts/test/TestEvent.ts",
     "scripts/main.ts",
   ],
   "include": [
     "**/*.d.ts",
+    "scripts/akframe/",
   ],
   "exclude":[
     "dist/",
-    "node_modules",
+    "node_modules/",
   ]
 }

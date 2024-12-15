@@ -1,5 +1,5 @@
 {
-    "editor.fontSize": 12,
+    "editor.fontSize": 14,
     //左边文件栏隐藏那些文件夹
     "files.exclude": {
         "**/.git": true,

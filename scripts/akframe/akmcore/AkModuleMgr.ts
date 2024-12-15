@@ -7,9 +7,12 @@ namespace ak {
          * @param {{new():AkModule}} $module
          * @memberof AkModuleMgr
          */
-        public static StartModule($module: {new():AkModule}) {
-            let ins: IModule = new $module();
+        public static RegisterModule(moduleClass: new() => AkModule) {
+            let ins: IModule = new moduleClass();
             ins.StartProxy()
+        }
+
+        public static StartModule() {
         }
     }
 }
