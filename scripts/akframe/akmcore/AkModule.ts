@@ -9,7 +9,9 @@ namespace ak {
         public StartProxy(): void {
             const proxys = this.RegProxy();
             proxys.forEach($item => {
-                (new $item()).StartListen();
+                const proxy = new $item();
+                proxy.OnInit();
+                proxy.StartListen();
             });
         }
         

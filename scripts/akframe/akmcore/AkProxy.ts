@@ -1,5 +1,9 @@
 namespace ak {
     export class AkProxy implements IProxy {
+        // 最先调用
+        public OnInit(): void {
+        }
+
         /**
          * 遍历代理里注册的事件
          * 事件=>事件对象, 存储到事件管理
