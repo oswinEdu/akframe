@@ -1,38 +1,35 @@
-// namespace ak {
-//     export class MyClass {
-//         public constructor() {
-//             AkModuleMgr.RegisterModule(TestModule);
+namespace ak {
+    export class MyClass {
+        public constructor() {
+            AkModuleMgr.RegisterModule(TestModule);
 
-//             setTimeout(() => {
-//                 // let tobj = new TestEvent()
-//                 // tobj.testNum = -99;
-//                 AkEventMgr.S(new TestEvent());
-//             }, 1000);
-//         }
+            setTimeout(() => {
+                let tobj = new TestEvent()
+                tobj.testNum = -99;
+                AkEventMgr.S(tobj);
+            }, 500);
+        }
 
-//         printTS() {
-//         }
-//     }
-// }
- 
-// var sam = new ak.MyClass();
-// sam.printTS();
+    }
+}
 
-// function delay(ms: number): Promise<void> {
-//     return new Promise((resolve) => {
-//       setTimeout(() => {
-//         resolve();
-//       }, ms);
-//     });
-//   }
-  
-//   async function printMessage() {
-//     console.log('Start');
-//     await delay(1000); // 等待1秒
-//     console.log('After delay');
-//   }
-  
-//   printMessage();
+function delay(ms: number): Promise<void> {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve();
+        }, ms);
+    });
+}
+
+async function printMessage() {
+    console.log('Start');
+
+    new ak.MyClass();
+
+    console.log('After delay');
+}
+
+printMessage();
 
 
 /** 

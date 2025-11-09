@@ -1,8 +1,8 @@
 namespace ak {
     export class AkProxy implements IProxy {
-        // 最先调用
-        public OnInit(): void {
+        public onInit(): void {
         }
+
 
         /**
          * 遍历代理里注册的事件
@@ -11,36 +11,19 @@ namespace ak {
         public StartListen(): void {
             const evts = this.RegEvents();
             evts.forEach($evt => {
-                const inc = new AkEventVo(AkEventMgr.EventNameClass($evt), this);
-                AkEventMgr.RegEvent(inc);
+                AkEventMgr.RegEvent($evt, this);
             });
         }
       
 
+
         /**
          * 回调派生类事件函数
          */
-        public ReceiveEvents(evt: AkEvent, ...plist: any[]): void {
-            this.ExecuteHook(evt, plist);
+        public ReceiveEvents(evt: AkEvent): void {
+            AkLog.error("派生类 实现 ReceiveEvents");
         }
       
-
-        /**
-         * 反射调用方法
-         */
-        protected ExecuteHook(evt: AkEvent, ...args: any[]): boolean {
-            const method = `on${AkEventMgr.EventName(evt)}`;
-            const info = this.constructor as any;
-
-            const methodinfo = info.prototype[method];
-            if (methodinfo) {
-                methodinfo.call(this, evt);
-                return true;
-            }
-            
-            console.warn(`Register the event:${method} but not find handle method!`);
-            return false;
-        }
 
 
 

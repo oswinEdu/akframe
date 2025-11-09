@@ -1,69 +1,42 @@
 {
-  "compilerOptions": {
-    "target": "es5",// es5 es2016 cocos creator不能使用
-    
-    "lib": [
-      "es5",
-      "dom",
-      "es6",
-      "es2015.promise"
+    "compilerOptions": {
+        "target": "es5", // 只能 es5 因为 es2016 cocos creator不能使用
+        "lib": [
+            "es5",
+            "dom",
+            "es6",
+            "es2015.promise"
+        ],
+        "module": "amd", //amd commonjs
+        // "rootDir": "./",
+        // "moduleResolution": "node10",
+        // "baseUrl": "./",
+        "declaration": true,
+        "sourceMap": true,
+        // "inlineSourceMap": true,
+        // "outFile": "./dist/akframe.js",
+        "outFile": "./dist/akframe.js",
+        // "outDir": "./dist/",
+        "removeComments": true, // 是否移除注释
+        // "isolatedModules": true,
+        // "verbatimModuleSyntax": true,
+        // "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        // "preserveSymlinks": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        // "skipDefaultLibCheck": true,
+        "skipLibCheck": true
+    },
+    "include": [
+        "**/*.d.ts",
+        "scripts/akframe/",
+        // 测试用
+        "scripts/test/",
+        "scripts/main.ts",
     ],
- 
-    "module": "amd",//amd commonjs
-    // "rootDir": "./",
-    // "moduleResolution": "node10",
-    // "baseUrl": "./",
-
-    "declaration": true,
-    // "declarationMap": true,
-    // "sourceMap": true,
-    // "inlineSourceMap": true,
-    // "outFile": "./dist/akframe.js",
-    "outFile": "../frame2/assets/libs/akframe.js",
-    // "outDir": "./dist/",
-    // "removeComments": true, // 是否移除注释
-
-    // "isolatedModules": true,
-    // "verbatimModuleSyntax": true,
-    // "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    // "preserveSymlinks": true,
-    "forceConsistentCasingInFileNames": true,
-
-    "strict": true,
-
-    // "skipDefaultLibCheck": true,
-    "skipLibCheck": true
-  },
-
-  "files":[
-    // "scripts/akframe/akmcore/imcore/IModule.ts",
-    // "scripts/akframe/akmcore/imcore/IProxy.ts",
-
-    // "scripts/akframe/akmcore/AkEvent.ts",
-    // "scripts/akframe/akmcore/AkEventVo.ts",
-    // "scripts/akframe/akmcore/AkEventMgr.ts",
-    // "scripts/akframe/akmcore/AkProxy.ts",
-    // "scripts/akframe/akmcore/AkModule.ts",
-    // "scripts/akframe/akmcore/AkModuleMgr.ts",
-
-    // "scripts/akframe/akutils/AkLog.ts",
-    // "scripts/akframe/akutils/AkDate.ts",
-
-    // "scripts/akframe/akmain.ts",
-
-    // "scripts/test/TestModule.ts",
-    // "scripts/test/TestProxy1.ts",
-    // "scripts/test/TestProxy2.ts",
-    // "scripts/test/TestEvent.ts",
-    "scripts/main.ts",
-  ],
-  "include": [
-    "**/*.d.ts",
-    "scripts/akframe/",
-  ],
-  "exclude":[
-    "dist/",
-    "node_modules/",
-  ]
+    "exclude": [
+        "dist/",
+        "node_modules/",
+    ]
 }

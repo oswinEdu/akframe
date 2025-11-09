@@ -1,17 +1,20 @@
 namespace ak {
     export class AkModuleMgr {
-        /**
-         * 注册 module
-         *
-         * @static
-         * @param {{new():AkModule}} $module
-         * @memberof AkModuleMgr
-         */
-        public static RegisterModule(list: {new():AkModule}[]) {
-            for(const $module of list) {
-                let ins: IModule = new $module();
-                ins.StartProxy()
+        public static RegisterModule(moduleClass: AkModuleClass) {
+            let ins: IModule = new moduleClass();
+            ins.onInit();
+            ins.StartProxy();
+        }
+
+
+        public static RegisterModuleList(moduleClassList: AkModuleClass[]) {
+            for (let i = 0; i < moduleClassList.length; i++) {
+                let moduleClass: AkModuleClass = moduleClassList[i];
+                this.RegisterModule(moduleClass);
             }
         }
+
+
+        public static StartModule() { }
     }
 }
