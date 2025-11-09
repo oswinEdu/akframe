@@ -7,7 +7,7 @@ namespace ak {
          * 注册事件
          * @param evo 
          */
-        public static RegEvent(evo: AkEventClass, proxy:AkProxy): void {
+        public static RegisterEvents(evo: AkEventClass, proxy:AkProxy): void {
             let proxyList:  AkProxy[] = []
             if(this._eventMap.has(evo)) {
                 proxyList = this._eventMap.get(evo) ?? [];

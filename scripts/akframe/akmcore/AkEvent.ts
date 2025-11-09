@@ -4,7 +4,7 @@ namespace ak {
         }
 
         public getClass(): {new (): AkEvent} {
-            return this.constructor as new () => AkEvent ;
+            return this.constructor as new () => AkEvent;
         }
     }
 }

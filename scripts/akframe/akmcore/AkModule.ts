@@ -1,16 +1,14 @@
 namespace ak {
     export class AkModule implements IModule {
-        public onInit(): void {
-
+        public OnInit(): void {
         }
 
         /**
          * 注册代理
-         *
          * @memberof AkModule
          */
         public StartProxy(): void {
-            const proxys = this.RegProxy();
+            const proxys = this.RegisterProxy();
             proxys.forEach($item => {
                 (new $item()).StartListen();
             });
@@ -19,8 +17,8 @@ namespace ak {
 
         // 派生类实现
         // 
-        protected RegProxy(): Array<{ new(): AkProxy }> {
-            AkLog.error("派生类实现 RegProxy");
+        protected RegisterProxy(): Array<{ new(): AkProxy }> {
+            AkLog.error("派生类实现 RegisterProxy");
             return [];
         }
     }

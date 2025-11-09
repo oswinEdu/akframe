@@ -1,7 +1,7 @@
 namespace ak {
     export interface IProxy {
-        RegEvents(): AkEventClass[];
+        RegisterEvents(): AkEventClass[];
         StartListen(): void;
-        onInit(): void;
+        OnInit(): void;
     }
 }

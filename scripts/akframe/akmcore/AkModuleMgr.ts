@@ -2,7 +2,7 @@ namespace ak {
     export class AkModuleMgr {
         public static RegisterModule(moduleClass: AkModuleClass) {
             let ins: IModule = new moduleClass();
-            ins.onInit();
+            ins.OnInit();
             ins.StartProxy();
         }
 

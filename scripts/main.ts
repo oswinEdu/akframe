@@ -7,6 +7,7 @@ namespace ak {
                 let tobj = new TestEvent()
                 tobj.testNum = -99;
                 AkEventMgr.S(tobj);
+                AkEventMgr.S(new TestEventTwo());
             }, 500);
         }
 

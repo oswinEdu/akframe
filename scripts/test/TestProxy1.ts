@@ -1,5 +1,5 @@
 class TestProxy1 extends ak.AkProxy {
-    RegEvents(): (new () => ak.AkEvent)[] {
+    RegisterEvents(): (new () => ak.AkEvent)[] {
         return [TestEvent]
     }
 

@@ -1,6 +1,6 @@
 namespace ak {
     export class AkProxy implements IProxy {
-        public onInit(): void {
+        public OnInit(): void {
         }
 
 
@@ -9,13 +9,12 @@ namespace ak {
          * 事件=>事件对象, 存储到事件管理
          */
         public StartListen(): void {
-            const evts = this.RegEvents();
+            const evts = this.RegisterEvents();
             evts.forEach($evt => {
-                AkEventMgr.RegEvent($evt, this);
+                AkEventMgr.RegisterEvents($evt, this);
             });
         }
       
-
 
         /**
          * 回调派生类事件函数
@@ -23,13 +22,12 @@ namespace ak {
         public ReceiveEvents(evt: AkEvent): void {
             AkLog.error("派生类 实现 ReceiveEvents");
         }
-      
 
 
 
         // 派生类实现
-        public RegEvents(): { new(): AkEvent }[]  {
-            AkLog.error("派生类 实现 RegEvents");
+        public RegisterEvents(): { new(): AkEvent }[]  {
+            AkLog.error("派生类 实现 RegisterEvents");
             return [];
         }
     }
