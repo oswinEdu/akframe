@@ -25,14 +25,15 @@
         "forceConsistentCasingInFileNames": true,
         "strict": true,
         // "skipDefaultLibCheck": true,
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "types": []
     },
     "include": [
         "**/*.d.ts",
         "scripts/akframe/",
         // 测试用
-        "scripts/test/",
-        "scripts/main.ts",
+        // "scripts/test/",
+        // "scripts/main.ts",
     ],
     "exclude": [
         "dist/",
